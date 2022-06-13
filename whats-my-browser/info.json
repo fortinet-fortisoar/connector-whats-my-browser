@@ -1,0 +1,95 @@
+{
+  "name": "whats-my-browser",
+  "label": "WhatIsMyBrowser",
+  "version": "1.0.0",
+  "description": "WhatIsMyBrowser parses user agent strings and gives insight into known user agents. This Connector supports executing investigative action like parse user agent on the WhatIsMyBrowser.",
+  "publisher": "Community",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "category": "Threat Intelligence",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server",
+        "description": "Server URL of the WhatIsMyBrowser server to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "server_url",
+        "value": "api.whatismybrowser.com",
+        "placeholder": "api.whatismybrowser.com"
+      },
+      {
+        "title": "API Key",
+        "description": "API key that is configured for your account to access the WhatIsMyBrowser server.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "api_key"
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "value": true,
+        "tooltip": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True."
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "user_agent_parse",
+      "title": "Parse User Agent",
+      "description": "Parse a user agent string to retrieve insight details from WhatIsMyBrowser server.",
+      "category": "investigation",
+      "annotation": "user_agent_parse",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "User Agent",
+          "description": "Specify a user agent string to retrieve insight details from WhatIsMyBrowser server.",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "user_agent"
+        }
+      ],
+      "output_schema": {
+        "parse": {
+          "simple_software_string": "",
+          "simple_sub_description_string": "",
+          "simple_operating_platform_string": "",
+          "software": "",
+          "software_name": "",
+          "software_name_code": "",
+          "software_version": "",
+          "software_version_full": [],
+          "operating_system": "",
+          "operating_system_name": "",
+          "operating_system_name_code": "",
+          "operating_system_flavour": "",
+          "operating_system_flavour_code": "",
+          "operating_system_version": "",
+          "operating_system_version_full": [],
+          "is_abusive": "",
+          "user_agent": ""
+        },
+        "result": {
+          "code": "",
+          "message_code": "",
+          "message": ""
+        }
+      }
+    }
+  ]
+}

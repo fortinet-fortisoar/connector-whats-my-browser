@@ -1,0 +1,121 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "@type": "WorkflowCollection",
+      "name": "Sample - WhatIsMyBrowser - 1.0.0",
+      "description": null,
+      "visible": true,
+      "image": null,
+      "uuid": "acc5e4da-6f26-4c80-b5d1-1640ab2100e2",
+      "id": 282,
+      "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "createDate": 1655103570.369027,
+      "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+      "modifyDate": 1655103570.369027,
+      "deletedAt": null,
+      "importedBy": [],
+      "recordTags": [],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Parse User Agent",
+          "aliasName": null,
+          "tag": null,
+          "description": "Parse a user agent.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1655103702,
+          "collection": "/api/3/workflow_collections/acc5e4da-6f26-4c80-b5d1-1640ab2100e2",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/78e60ae9-6222-46ba-b667-13c8b656fc29",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "f9b4189d-13f7-493d-9535-d157e36bcfad",
+                "title": "WhatIsMyBrowser: Parse User Agent",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "78e60ae9-6222-46ba-b667-13c8b656fc29"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Parse User Agent",
+              "description": null,
+              "arguments": {
+                "name": "WhatIsMyBrowser",
+                "config": "",
+                "params": {
+                  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36"
+                },
+                "version": "1.0.0",
+                "connector": "whatismybrowser",
+                "operation": "user_agent_parse",
+                "operationTitle": "Parse User Agent",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "b7d4a2df-63fd-4ad2-9299-68c4801fd0d6"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Parse User Agent",
+              "targetStep": "/api/3/workflow_steps/b7d4a2df-63fd-4ad2-9299-68c4801fd0d6",
+              "sourceStep": "/api/3/workflow_steps/78e60ae9-6222-46ba-b667-13c8b656fc29",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "a0ed42e3-62f9-44ef-823f-2ecddaf64e4f"
+            }
+          ],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "7abd9d23-7dbb-4e62-8389-2a47da290f48",
+          "id": 2545,
+          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "createDate": 1655103610.04449,
+          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
+          "modifyDate": 1655103698.15397,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "whatismybrowser"
+          ]
+        }
+      ]
+    }
+  ],
+  "exported_tags": [
+    "whatismybrowser"
+  ]
+}
