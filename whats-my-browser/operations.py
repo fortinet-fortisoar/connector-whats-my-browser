@@ -83,13 +83,11 @@ def user_agent_parse(config, params):
 
 
 def _check_health(config):
-    whatismybrowser = WhatIsMyBrowser(config)
-    endpoint = '/user_agent_parse'
-    payload = {
-        'user_agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36"
-    }
     try:
-        response = whatismybrowser.make_rest_call(endpoint, 'POST', data=json.dumps(payload))
+        payload = {
+            'user_agent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36"
+        }
+        response = user_agent_parse(config, params=payload)
         if response:
             return True
     except Exception as err:
